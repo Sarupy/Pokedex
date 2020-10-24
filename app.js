@@ -3,7 +3,7 @@ const fetchPokemon = () => {
     
     const pokemonPromises = []
 
-    for (let i = 1; i <= 251; i++)
+    for (let i = 1; i <= 151; i++)
     {      
             pokemonPromises.push(fetch(getPokemonUrl(i)).then(response => response.json()))     
     }
@@ -18,15 +18,18 @@ const fetchPokemon = () => {
             var cardTypes
 
             if (types.length == 1) {
-                cardHeader = '<li class="card ' + types[0] + '">'
+                cardTypes = '<div style="background-color:var(--' + pokemon.types[0].type.name + ');border-color:var(--' + pokemon.types[0].type.name + ') " class="card-type ' + pokemon.types[0].type.name + '">' + pokemon.types[0].type.name.toUpperCase() + '</div>'  
             } else {
-                cardHeader =  '<li class="card" style=" background-image: linear-gradient(45deg,'+ getStyle('--' +types[0]) + ' 30%, 50%, ' + getStyle('--' +types[1]) + ' 70%)">'
+                cardTypes = '<div style="background-color:var(--' + pokemon.types[0].type.name + ');border-color:var(--' + pokemon.types[0].type.name + ') " class="card-type ' + pokemon.types[0].type.name + '">' + pokemon.types[0].type.name.toUpperCase() + '</div>' + 
+                            '<div style="background-color:var(--' + pokemon.types[1].type.name + ');border-color:var(--' + pokemon.types[1].type.name + ') " class="card-type ' + pokemon.types[1].type.name + '">' + pokemon.types[1].type.name.toUpperCase() + '</div>'
+
             } 
             accumullator += 
-            cardHeader  +
+            '<li class="card">'  +
+            '<h1 class="card-title"> #' + (pokemon.id + "").padStart(3, "0") + '</h1>' +
             '<img class="card-image" src="https://pokeres.bastionbot.org/images/pokemon/'+ pokemon.id + '.png">' +
-            '<h2 class="card-title">' + pokemon.id + '. ' + pokemon.name + '</h2>' +
-            '<p class="card-subtitle">' + types.join(' | ') + '</p>'  +
+            '<h1 class="card-title">' + pokemon.name + '</h1>' +
+            cardTypes  +
             '</li>'
             return accumullator
           },'')
