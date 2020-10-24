@@ -1,5 +1,5 @@
 # Pokedex
-(javascript-only) (responsive)
+tags: [javascript] [responsivo]
 <br> <br>
 Projeto de poucas horas que eu criei para me aprofundar mais no javascript, aprender um pouco mais sobre APIs e matar a nostalgia de uma série que eu gosto muito, Pokémon. 
 <br> <br>
