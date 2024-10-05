@@ -27,7 +27,7 @@ const fetchPokemon = () => {
             accumullator += 
             '<li class="card">'  +
             '<h1 class="card-title"> #' + (pokemon.id + "").padStart(3, "0") + '</h1>' +
-            '<img class="card-image" src="https://pokeres.bastionbot.org/images/pokemon/'+ pokemon.id + '.png">' +
+            '<img class="card-image" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/'+ pokemon.id + '.png">' +
             '<h1 class="card-title">' + pokemon.name + '</h1>' +
             cardTypes  +
             '</li>'
